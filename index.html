@@ -277,41 +277,6 @@ button:active {
   gap: 8px;
 }
 
-.panel-list {
-  display: grid;
-  gap: 7px;
-}
-
-.panel-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #181818;
-  border: 1px solid #272727;
-  border-radius: 11px;
-  padding: 10px 12px;
-}
-
-.panel-row strong {
-  font-size: 13px;
-}
-
-.panel-row span {
-  color: #aaa;
-  font-size: 12px;
-}
-
-.material-badge {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 3px 6px;
-  border-radius: 5px;
-  background: #302000;
-  color: #ffcf55;
-  font-size: 9px;
-  font-weight: 800;
-}
-
 #reportScreen {
   display: none;
   min-height: 100vh;
@@ -452,6 +417,7 @@ button:active {
   .report-page {
     max-width: none;
   }
+
 }
 
 @media (max-width: 500px) {
@@ -475,6 +441,7 @@ button:active {
   .report-info {
     grid-template-columns: 1fr;
   }
+
 }
 
 </style>
@@ -487,6 +454,7 @@ button:active {
   <div class="app">
 
     <div class="header">
+
       <div class="logo">
         HagelScan <span>PRO</span>
       </div>
@@ -494,6 +462,7 @@ button:active {
       <div class="madeby">
         Made by Oscar
       </div>
+
     </div>
 
 
@@ -562,25 +531,16 @@ button:active {
       </select>
 
 
-      <!-- MATERIAALKEUZE -->
+      <!-- MATERIAAL / TECHNIEK -->
 
-      <div id="materialBox" class="material-box">
+      <div id="materialBox"
+           class="material-box">
 
         <label class="label">
           MATERIAAL / TECHNIEK
         </label>
 
         <select id="materialSelect">
-
-          <option value="staal">
-            Staal / standaard — 0% toeslag
-          </option>
-
-          <option id="specialMaterialOption"
-                  value="aluminium">
-            Aluminium
-          </option>
-
         </select>
 
         <div id="materialInfo"
@@ -637,25 +597,30 @@ button:active {
       <div class="buttons">
 
         <button id="startBtn"
-                class="primary">
+                class="primary"
+                type="button">
           START SCAN
         </button>
 
         <button id="stopBtn"
-                class="danger">
+                class="danger"
+                type="button">
           STOP
         </button>
 
-        <button id="resetBtn">
+        <button id="resetBtn"
+                type="button">
           RESET
         </button>
 
-        <button id="savePanelBtn">
+        <button id="savePanelBtn"
+                type="button">
           DEEL OPSLAAN
         </button>
 
         <button id="reportBtn"
-                class="report-button full">
+                class="report-button full"
+                type="button">
           RAPPORT
         </button>
 
@@ -671,6 +636,7 @@ button:active {
       <div class="stats">
 
         <div class="stat">
+
           <div class="stat-name">
             INSLAGEN
           </div>
@@ -679,10 +645,12 @@ button:active {
                class="stat-value">
             0
           </div>
+
         </div>
 
 
         <div class="stat">
+
           <div class="stat-name">
             GESCAND
           </div>
@@ -691,10 +659,12 @@ button:active {
                class="stat-value">
             0%
           </div>
+
         </div>
 
 
         <div class="stat">
+
           <div class="stat-name">
             GROOTSTE
           </div>
@@ -703,6 +673,7 @@ button:active {
                class="stat-value">
             —
           </div>
+
         </div>
 
       </div>
@@ -721,53 +692,72 @@ button:active {
       <div class="size-grid">
 
         <div class="size-box">
+
           <div class="size-title">
             &lt;10 mm
           </div>
+
           <div id="s0"
                class="size-number">
             0
           </div>
+
         </div>
 
+
         <div class="size-box">
+
           <div class="size-title">
             10–20
           </div>
+
           <div id="s1"
                class="size-number">
             0
           </div>
+
         </div>
 
+
         <div class="size-box">
+
           <div class="size-title">
             20–30
           </div>
+
           <div id="s2"
                class="size-number">
             0
           </div>
+
         </div>
 
+
         <div class="size-box">
+
           <div class="size-title">
             30–40
           </div>
+
           <div id="s3"
                class="size-number">
             0
           </div>
+
         </div>
 
+
         <div class="size-box">
+
           <div class="size-title">
             &gt;40
           </div>
+
           <div id="s4"
                class="size-number">
             0
           </div>
+
         </div>
 
       </div>
@@ -791,7 +781,8 @@ button:active {
                step="0.1"
                placeholder="bijv. 20 mm">
 
-        <button id="calibrateBtn">
+        <button id="calibrateBtn"
+                type="button">
           KALIBREER
         </button>
 
@@ -807,26 +798,6 @@ button:active {
         De huidige versie gebruikt nog een
         handmatige schaalreferentie.
         De echte AI- en maatbepaling komt later.
-
-      </div>
-
-    </div>
-
-
-    <!-- OPGESLAGEN DELEN -->
-
-    <div class="card">
-
-      <div class="label">
-        OPGESLAGEN CARROSSERIEDELEN
-      </div>
-
-      <div id="panelList"
-           class="panel-list">
-
-        <div style="color:#666;font-size:12px;">
-          Nog geen delen opgeslagen.
-        </div>
 
       </div>
 
@@ -1062,12 +1033,14 @@ button:active {
 
   <div class="report-actions">
 
-    <button id="printBtn">
+    <button id="printBtn"
+            type="button">
       PRINT / PDF
     </button>
 
     <button id="backBtn"
-            class="back">
+            class="back"
+            type="button">
       TERUG NAAR SCAN
     </button>
 
@@ -1087,7 +1060,7 @@ button:active {
    AUTO UPDATE
 ========================================================= */
 
-const APP_VERSION = "1.0.3";
+const APP_VERSION = "1.0.4";
 
 if ("serviceWorker" in navigator) {
 
@@ -1127,6 +1100,10 @@ if ("serviceWorker" in navigator) {
 }
 
 
+/* =========================================================
+   ELEMENTEN
+========================================================= */
+
 const video =
   document.getElementById("video");
 
@@ -1154,11 +1131,6 @@ const materialSelect =
 const materialInfo =
   document.getElementById("materialInfo");
 
-const specialMaterialOption =
-  document.getElementById(
-    "specialMaterialOption"
-  );
-
 const startBtn =
   document.getElementById("startBtn");
 
@@ -1178,6 +1150,10 @@ const calibrateBtn =
   document.getElementById("calibrateBtn");
 
 
+/* =========================================================
+   VARIABELEN
+========================================================= */
+
 let stream = null;
 
 let scanning = false;
@@ -1192,4 +1168,1560 @@ let frameCounter = 0;
 
 let scannedFrames = 0;
 
-let scale
+let scaleReference = null;
+
+
+/* =========================================================
+   UPEX-MATERIAAL / TECHNIEKREGELS
+========================================================= */
+
+const materialRules = {
+
+  "Motorkap": {
+
+    "staal": 0,
+
+    "aluminium": 25
+
+  },
+
+  "Dakstijl links": {
+
+    "staal": 0,
+
+    "kleeftechniek": 15
+
+  },
+
+  "Dakstijl rechts": {
+
+    "staal": 0,
+
+    "kleeftechniek": 15
+
+  }
+
+};
+
+
+/* =========================================================
+   OPGESLAGEN PANELEN
+========================================================= */
+
+let savedPanels =
+  JSON.parse(
+    localStorage.getItem(
+      "hagelscanPanels"
+    ) || "[]"
+  );
+
+
+/* =========================================================
+   MATERIAAL INTERFACE
+========================================================= */
+
+function updateMaterialUI() {
+
+  const panel =
+    panelSelect.value;
+
+  const rules =
+    materialRules[panel];
+
+
+  materialSelect.innerHTML = "";
+
+
+  if (!rules) {
+
+    materialBox.style.display =
+      "none";
+
+    materialInfo.textContent =
+      "Geen materiaal- of techniektoeslag ingesteld.";
+
+    return;
+
+  }
+
+
+  materialBox.style.display =
+    "block";
+
+
+  /* -----------------------------------------
+     STANDAARD STAAL
+  ----------------------------------------- */
+
+  const standardOption =
+    document.createElement("option");
+
+  standardOption.value =
+    "staal";
+
+  standardOption.textContent =
+    "Staal / standaard — 0% toeslag";
+
+  materialSelect.appendChild(
+    standardOption
+  );
+
+
+  /* -----------------------------------------
+     SPECIALE TECHNIEK
+  ----------------------------------------- */
+
+  if (panel === "Motorkap") {
+
+    const aluminiumOption =
+      document.createElement("option");
+
+    aluminiumOption.value =
+      "aluminium";
+
+    aluminiumOption.textContent =
+      "Aluminium — +25% AE";
+
+    materialSelect.appendChild(
+      aluminiumOption
+    );
+
+  }
+
+
+  if (
+    panel === "Dakstijl links" ||
+    panel === "Dakstijl rechts"
+  ) {
+
+    const kleefOption =
+      document.createElement("option");
+
+    kleefOption.value =
+      "kleeftechniek";
+
+    kleefOption.textContent =
+      "Kleeftechniek — +15% AE";
+
+    materialSelect.appendChild(
+      kleefOption
+    );
+
+  }
+
+
+  /*
+    Begin altijd met staal.
+  */
+
+  materialSelect.value =
+    "staal";
+
+
+  updateMaterialInfo();
+
+}
+
+
+/* =========================================================
+   MATERIAAL INFO
+========================================================= */
+
+function updateMaterialInfo() {
+
+  const panel =
+    panelSelect.value;
+
+  const material =
+    materialSelect.value;
+
+  const rules =
+    materialRules[panel];
+
+
+  if (!rules) {
+
+    materialInfo.textContent =
+      "Geen materiaal- of techniektoeslag ingesteld.";
+
+    return;
+
+  }
+
+
+  const surcharge =
+    rules[material] || 0;
+
+
+  if (
+    material === "kleeftechniek"
+  ) {
+
+    materialInfo.innerHTML =
+      "<strong>Kleeftechniek:</strong> +" +
+      surcharge +
+      "% AE.";
+
+    return;
+
+  }
+
+
+  if (
+    material === "aluminium"
+  ) {
+
+    materialInfo.innerHTML =
+      "<strong>Aluminium:</strong> +" +
+      surcharge +
+      "% AE.";
+
+    return;
+
+  }
+
+
+  materialInfo.textContent =
+    "Geen materiaal- of techniektoeslag ingesteld.";
+
+}
+
+
+/* =========================================================
+   CAMERA STARTEN
+========================================================= */
+
+async function startCamera() {
+
+  /*
+    Voorkom dat meerdere camera-streams
+    tegelijk worden gestart.
+  */
+
+  if (scanning) {
+
+    scanStatus.textContent =
+      "Scan is al actief.";
+
+    return;
+
+  }
+
+
+  if (
+    !navigator.mediaDevices ||
+    !navigator.mediaDevices.getUserMedia
+  ) {
+
+    alert(
+      "Deze browser ondersteunt geen camera."
+    );
+
+    return;
+
+  }
+
+
+  try {
+
+    scanStatus.textContent =
+      "Camera wordt gestart...";
+
+
+    /*
+      Eerst eventueel oude stream stoppen.
+    */
+
+    if (stream) {
+
+      stream
+        .getTracks()
+        .forEach(track => {
+          track.stop();
+        });
+
+      stream = null;
+
+    }
+
+
+    /*
+      Camera aanvragen.
+    */
+
+    stream =
+      await navigator.mediaDevices.getUserMedia({
+
+        video: {
+
+          facingMode: {
+            ideal: "environment"
+          },
+
+          width: {
+            ideal: 1920
+          },
+
+          height: {
+            ideal: 1080
+          }
+
+        },
+
+        audio: false
+
+      });
+
+
+    /*
+      Stream aan video koppelen.
+    */
+
+    video.srcObject =
+      stream;
+
+
+    /*
+      Safari/iPhone heeft soms een
+      extra play() nodig.
+    */
+
+    try {
+
+      await video.play();
+
+    } catch (playError) {
+
+      console.log(
+        "Video play melding:",
+        playError
+      );
+
+    }
+
+
+    video.style.display =
+      "block";
+
+
+    cameraMessage.style.display =
+      "none";
+
+
+    resizeCanvas();
+
+
+    scanning = true;
+
+
+    frameCounter = 0;
+
+    scannedFrames = 0;
+
+
+    scanStatus.textContent =
+      "Scan actief — beweeg langzaam over het paneel.";
+
+
+    /*
+      Start demo-AI.
+    */
+
+    if (animationFrame) {
+
+      cancelAnimationFrame(
+        animationFrame
+      );
+
+      animationFrame = null;
+
+    }
+
+
+    analyseLoop();
+
+  } catch (error) {
+
+    console.error(
+      "Camera fout:",
+      error
+    );
+
+
+    scanning = false;
+
+
+    if (stream) {
+
+      stream
+        .getTracks()
+        .forEach(track => {
+          track.stop();
+        });
+
+      stream = null;
+
+    }
+
+
+    video.srcObject =
+      null;
+
+
+    scanStatus.textContent =
+      "Camera kon niet worden gestart.";
+
+
+    alert(
+      "Camera kon niet worden gestart.\n\n" +
+      "Controleer in de iPhone-instellingen of Safari toegang heeft tot de camera."
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   CAMERA STOPPEN
+========================================================= */
+
+function stopCamera() {
+
+  scanning = false;
+
+
+  if (animationFrame) {
+
+    cancelAnimationFrame(
+      animationFrame
+    );
+
+    animationFrame = null;
+
+  }
+
+
+  if (stream) {
+
+    stream
+      .getTracks()
+      .forEach(track => {
+
+        track.stop();
+
+      });
+
+    stream = null;
+
+  }
+
+
+  video.pause();
+
+  video.srcObject =
+    null;
+
+  video.style.display =
+    "none";
+
+  cameraMessage.style.display =
+    "flex";
+
+
+  scanStatus.textContent =
+    "Scan gestopt.";
+
+}
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+function resizeCanvas() {
+
+  const rect =
+    overlay.getBoundingClientRect();
+
+
+  const ratio =
+    window.devicePixelRatio || 1;
+
+
+  overlay.width =
+    Math.max(
+      1,
+      Math.floor(
+        rect.width * ratio
+      )
+    );
+
+
+  overlay.height =
+    Math.max(
+      1,
+      Math.floor(
+        rect.height * ratio
+      )
+    );
+
+
+  ctx.setTransform(
+    ratio,
+    0,
+    0,
+    ratio,
+    0,
+    0
+  );
+
+}
+
+
+/* =========================================================
+   DEMO DETECTOR
+========================================================= */
+
+function analyseLoop() {
+
+  if (!scanning) {
+
+    animationFrame = null;
+
+    return;
+
+  }
+
+
+  frameCounter++;
+
+
+  /*
+    TIJDELIJKE DEMO-LOGICA.
+
+    Dit wordt later vervangen door
+    echte AI-deukdetectie.
+  */
+
+  if (frameCounter % 18 === 0) {
+
+    const rect =
+      overlay.getBoundingClientRect();
+
+
+    const x =
+      20 +
+      Math.random() *
+      Math.max(
+        30,
+        rect.width - 40
+      );
+
+
+    const y =
+      20 +
+      Math.random() *
+      Math.max(
+        30,
+        rect.height - 40
+      );
+
+
+    const alreadyNear =
+      detections.some(d => {
+
+        const dx =
+          d.x - x;
+
+        const dy =
+          d.y - y;
+
+
+        return Math.sqrt(
+          dx * dx +
+          dy * dy
+        ) < 42;
+
+      });
+
+
+    if (!alreadyNear) {
+
+      detections.push({
+
+        x: x,
+
+        y: y,
+
+        size:
+          8 +
+          Math.random() *
+          32
+
+      });
+
+    }
+
+  }
+
+
+  scannedFrames++;
+
+
+  drawDetections();
+
+  updateStats();
+
+
+  animationFrame =
+    requestAnimationFrame(
+      analyseLoop
+    );
+
+}
+
+
+/* =========================================================
+   DETECTIES TEKENEN
+========================================================= */
+
+function drawDetections() {
+
+  const rect =
+    overlay.getBoundingClientRect();
+
+
+  ctx.clearRect(
+    0,
+    0,
+    rect.width,
+    rect.height
+  );
+
+
+  detections.forEach(
+    d => {
+
+      ctx.beginPath();
+
+      ctx.arc(
+        d.x,
+        d.y,
+        9,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.strokeStyle =
+        "#e10600";
+
+      ctx.lineWidth =
+        2;
+
+      ctx.stroke();
+
+
+      ctx.beginPath();
+
+      ctx.arc(
+        d.x,
+        d.y,
+        2,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.fillStyle =
+        "#e10600";
+
+      ctx.fill();
+
+    }
+  );
+
+
+  manualDetections.forEach(
+    d => {
+
+      ctx.beginPath();
+
+      ctx.arc(
+        d.x,
+        d.y,
+        9,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.strokeStyle =
+        "#00ff7f";
+
+      ctx.lineWidth =
+        2;
+
+      ctx.stroke();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+function updateStats() {
+
+  const total =
+    detections.length +
+    manualDetections.length;
+
+
+  document.getElementById(
+    "total"
+  ).textContent =
+    total;
+
+
+  const coverage =
+    Math.min(
+      100,
+      Math.round(
+        scannedFrames / 3
+      )
+    );
+
+
+  document.getElementById(
+    "coverage"
+  ).textContent =
+    coverage + "%";
+
+
+  let largest = 0;
+
+
+  detections.forEach(
+    d => {
+
+      largest =
+        Math.max(
+          largest,
+          d.size || 0
+        );
+
+    }
+  );
+
+
+  manualDetections.forEach(
+    d => {
+
+      largest =
+        Math.max(
+          largest,
+          d.size || 0
+        );
+
+    }
+  );
+
+
+  if (largest > 40) {
+
+    document.getElementById(
+      "largest"
+    ).textContent =
+      ">40";
+
+  } else if (largest > 30) {
+
+    document.getElementById(
+      "largest"
+    ).textContent =
+      "30–40";
+
+  } else if (largest > 20) {
+
+    document.getElementById(
+      "largest"
+    ).textContent =
+      "20–30";
+
+  } else if (largest > 10) {
+
+    document.getElementById(
+      "largest"
+    ).textContent =
+      "10–20";
+
+  } else if (largest > 0) {
+
+    document.getElementById(
+      "largest"
+    ).textContent =
+      "<10";
+
+  } else {
+
+    document.getElementById(
+      "largest"
+    ).textContent =
+      "—";
+
+  }
+
+
+  /*
+    TIJDELIJKE VERDELING.
+  */
+
+  const s0 =
+    Math.round(
+      total * .30
+    );
+
+  const s1 =
+    Math.round(
+      total * .40
+    );
+
+  const s2 =
+    Math.round(
+      total * .20
+    );
+
+  const s3 =
+    Math.round(
+      total * .08
+    );
+
+  const s4 =
+    Math.max(
+      0,
+      total -
+      s0 -
+      s1 -
+      s2 -
+      s3
+    );
+
+
+  document.getElementById(
+    "s0"
+  ).textContent =
+    s0;
+
+  document.getElementById(
+    "s1"
+  ).textContent =
+    s1;
+
+  document.getElementById(
+    "s2"
+  ).textContent =
+    s2;
+
+  document.getElementById(
+    "s3"
+  ).textContent =
+    s3;
+
+  document.getElementById(
+    "s4"
+  ).textContent =
+    s4;
+
+}
+
+
+/* =========================================================
+   RESET SCAN
+========================================================= */
+
+function resetScan() {
+
+  detections = [];
+
+  manualDetections = [];
+
+  frameCounter = 0;
+
+  scannedFrames = 0;
+
+
+  ctx.clearRect(
+    0,
+    0,
+    overlay.width,
+    overlay.height
+  );
+
+
+  /*
+    Opgeslagen rapportdelen worden
+    bewust NIET verwijderd.
+    
+    RESET wist alleen de huidige scan.
+  */
+
+
+  updateStats();
+
+
+  scanStatus.textContent =
+    "Huidige scan gereset.";
+
+}
+
+
+/* =========================================================
+   SCHAAL
+========================================================= */
+
+calibrateBtn.onclick =
+  function () {
+
+    const value =
+      parseFloat(
+        document.getElementById(
+          "scaleInput"
+        ).value
+      );
+
+
+    if (!value || value <= 0) {
+
+      alert(
+        "Vul eerst een geldige schaal in, bijvoorbeeld 20 mm."
+      );
+
+      return;
+
+    }
+
+
+    scaleReference =
+      value;
+
+
+    scanStatus.textContent =
+      "Schaalreferentie ingesteld op " +
+      value +
+      " mm.";
+
+  };
+
+
+/* =========================================================
+   HUIDIG RESULTAAT
+========================================================= */
+
+function getCurrentResult() {
+
+  const total =
+    detections.length +
+    manualDetections.length;
+
+
+  const s0 =
+    Math.round(
+      total * .30
+    );
+
+  const s1 =
+    Math.round(
+      total * .40
+    );
+
+  const s2 =
+    Math.round(
+      total * .20
+    );
+
+  const s3 =
+    Math.round(
+      total * .08
+    );
+
+  const s4 =
+    Math.max(
+      0,
+      total -
+      s0 -
+      s1 -
+      s2 -
+      s3
+    );
+
+
+  const panel =
+    panelSelect.value;
+
+
+  const material =
+    materialRules[panel]
+      ? materialSelect.value
+      : "niet van toepassing";
+
+
+  const surcharge =
+    materialRules[panel]
+      ? (
+          materialRules[panel][material] ||
+          0
+        )
+      : 0;
+
+
+  return {
+
+    panel: panel,
+
+    material: material,
+
+    surcharge: surcharge,
+
+    total: total,
+
+    sizes: [
+      s0,
+      s1,
+      s2,
+      s3,
+      s4
+    ],
+
+    largest:
+      document.getElementById(
+        "largest"
+      ).textContent,
+
+    coverage:
+      document.getElementById(
+        "coverage"
+      ).textContent,
+
+    scaleReference:
+      scaleReference,
+
+    date:
+      new Date().toISOString(),
+
+    demo: true
+
+  };
+
+}
+
+
+/* =========================================================
+   OPSLAAN
+========================================================= */
+
+function savePanel() {
+
+  const result =
+    getCurrentResult();
+
+
+  if (result.total === 0) {
+
+    const ok =
+      confirm(
+        "Dit carrosseriedeel bevat momenteel 0 detecties. Toch opslaan?"
+      );
+
+
+    if (!ok)
+      return;
+
+  }
+
+
+  savedPanels =
+    savedPanels.filter(
+      p =>
+        p.panel !==
+        result.panel
+    );
+
+
+  savedPanels.push(
+    result
+  );
+
+
+  localStorage.setItem(
+    "hagelscanPanels",
+    JSON.stringify(
+      savedPanels
+    )
+  );
+
+
+  scanStatus.textContent =
+    result.panel +
+    " opgeslagen in rapport.";
+
+}
+
+
+/* =========================================================
+   RAPPORT OPENEN
+========================================================= */
+
+function openReport() {
+
+  const reportScreen =
+    document.getElementById(
+      "reportScreen"
+    );
+
+
+  const reportBody =
+    document.getElementById(
+      "reportBody"
+    );
+
+
+  reportBody.innerHTML = "";
+
+
+  let grandTotal = 0;
+
+
+  savedPanels.forEach(
+    p => {
+
+      grandTotal +=
+        Number(p.total) || 0;
+
+
+      let materialText =
+        "—";
+
+
+      if (
+        p.material ===
+        "aluminium"
+      ) {
+
+        materialText =
+          "Aluminium";
+
+      } else if (
+        p.material ===
+        "kleeftechniek"
+      ) {
+
+        materialText =
+          "Kleeftechniek";
+
+      } else if (
+        p.material ===
+        "staal"
+      ) {
+
+        materialText =
+          "Staal";
+
+      }
+
+
+      let surchargeText =
+        Number(p.surcharge) > 0
+          ? "+" +
+            p.surcharge +
+            "%"
+          : "0%";
+
+
+      const row =
+        document.createElement(
+          "tr"
+        );
+
+
+      row.innerHTML = `
+
+        <td style="text-align:left">
+          ${escapeHtml(p.panel)}
+        </td>
+
+        <td>
+          ${escapeHtml(materialText)}
+        </td>
+
+        <td>
+          ${surchargeText}
+        </td>
+
+        <td>
+          ${p.sizes[0]}
+        </td>
+
+        <td>
+          ${p.sizes[1]}
+        </td>
+
+        <td>
+          ${p.sizes[2]}
+        </td>
+
+        <td>
+          ${p.sizes[3]}
+        </td>
+
+        <td>
+          ${p.sizes[4]}
+        </td>
+
+        <td>
+          <strong>
+            ${p.total}
+          </strong>
+        </td>
+
+      `;
+
+
+      reportBody.appendChild(
+        row
+      );
+
+    }
+  );
+
+
+  if (!savedPanels.length) {
+
+    const row =
+      document.createElement(
+        "tr"
+      );
+
+
+    row.innerHTML = `
+      <td colspan="9"
+          style="padding:20px;color:#777;">
+        Nog geen carrosseriedelen opgeslagen.
+      </td>
+    `;
+
+
+    reportBody.appendChild(
+      row
+    );
+
+  }
+
+
+  document.getElementById(
+    "reportTotal"
+  ).textContent =
+    "Totaal inslagen: " +
+    grandTotal;
+
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "reportDate"
+  ).textContent =
+    now.toLocaleDateString(
+      "nl-NL"
+    ) +
+    " " +
+    now.toLocaleTimeString(
+      "nl-NL",
+      {
+        hour: "2-digit",
+        minute: "2-digit"
+      }
+    );
+
+
+  document.getElementById(
+    "app"
+  ).style.display =
+    "none";
+
+
+  reportScreen.style.display =
+    "block";
+
+
+  window.scrollTo(
+    0,
+    0
+  );
+
+}
+
+
+/* =========================================================
+   RAPPORT SLUITEN
+========================================================= */
+
+function closeReport() {
+
+  document.getElementById(
+    "reportScreen"
+  ).style.display =
+    "none";
+
+
+  document.getElementById(
+    "app"
+  ).style.display =
+    "block";
+
+
+  window.scrollTo(
+    0,
+    0
+  );
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+document.getElementById(
+  "printBtn"
+).onclick =
+  function () {
+
+    window.print();
+
+  };
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value) {
+
+  return String(value)
+
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+   START / STOP / RESET EVENTS
+========================================================= */
+
+startBtn.onclick =
+  function () {
+
+    startCamera();
+
+  };
+
+
+stopBtn.onclick =
+  function () {
+
+    stopCamera();
+
+  };
+
+
+resetBtn.onclick =
+  function () {
+
+    resetScan();
+
+  };
+
+
+savePanelBtn.onclick =
+  function () {
+
+    savePanel();
+
+  };
+
+
+reportBtn.onclick =
+  function () {
+
+    openReport();
+
+  };
+
+
+document.getElementById(
+  "backBtn"
+).onclick =
+  function () {
+
+    closeReport();
+
+  };
+
+
+panelSelect.onchange =
+  function () {
+
+    updateMaterialUI();
+
+  };
+
+
+materialSelect.onchange =
+  function () {
+
+    updateMaterialInfo();
+
+  };
+
+
+/* =========================================================
+   HANDMATIG TOEVOEGEN / VERWIJDEREN
+========================================================= */
+
+overlay.addEventListener(
+  "click",
+  function(event) {
+
+    const rect =
+      overlay.getBoundingClientRect();
+
+
+    const x =
+      event.clientX -
+      rect.left;
+
+
+    const y =
+      event.clientY -
+      rect.top;
+
+
+    let hitIndex =
+      -1;
+
+
+    detections.forEach(
+      (d, index) => {
+
+        const dx =
+          d.x - x;
+
+        const dy =
+          d.y - y;
+
+
+        const distance =
+          Math.sqrt(
+            dx * dx +
+            dy * dy
+          );
+
+
+        if (
+          distance < 22
+        ) {
+
+          hitIndex =
+            index;
+
+        }
+
+      }
+    );
+
+
+    if (
+      hitIndex >= 0
+    ) {
+
+      detections.splice(
+        hitIndex,
+        1
+      );
+
+
+      updateStats();
+
+      drawDetections();
+
+      return;
+
+    }
+
+
+    manualDetections.push({
+
+      x: x,
+
+      y: y,
+
+      size: 10
+
+    });
+
+
+    updateStats();
+
+    drawDetections();
+
+  }
+);
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+window.addEventListener(
+  "resize",
+  resizeCanvas
+);
+
+
+updateMaterialUI();
+
+updateStats();
+
+</script>
+
+</body>
+</html>
