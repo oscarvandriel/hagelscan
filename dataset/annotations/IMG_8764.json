@@ -5,7 +5,7 @@
   "detections": [
     {
       "id": "D01",
-      "diameter_mm": 20
+      "diameter_mm": 10
     }
   ]
 }
