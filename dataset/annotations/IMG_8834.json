@@ -1,0 +1,11 @@
+{
+  "image_id": "HS_IMG_0008",
+  "filename": "IMG_8834.jpeg",
+  "panel": "unknown",
+  "detections": [
+    {
+      "id": "D08",
+      "diameter_mm": 10
+    }
+  ]
+}
